@@ -84,19 +84,17 @@ codes. Do <em>not</em> use country domain names. For example, use
 
 <p>A list of audio codes can – unsurprisingly – be found at
 <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Wikipedia</a>.</p>
-<h2>Setup – Fields</h2>
-<p>This add-on adds the pronunciation to a field named “Audio”. You will
-probably have to <a href="Add%20audio%20field.html">add this field</a> to your notes.
-This has to be done for each note type you use.</p>
-<p>More sophisticated uses are also possible. Interested users can look
-at the <a href="Detailed%20audio%20field%20rules.html">detailed rules</a> on field
+<h2>Setup – Models</h2>
+<p>Use the <a href="Audio%20models.html">models</a> the add-on brings along can be
+used for simple cards and new material.</p>
+<h3>Changes to existing models</h3>
+<p>When the already existing notes use a more complex model, this model
+should be modified instead. An audio field should be added to the
+<a href="Add%20audio%20field.html">model</a>  and the <a href="Add%20audio%20to%20cards.html">cards</a></p>
+<p>Interested users can look at the
+<a href="Detailed%20audio%20field%20rules.html">detailed rules</a> on field
 selection for hints on how to use more then one pronunciation per
-note.</p>
-<h2>Setup – Cards</h2>
-<p>To use the downloaded data, you have to
-<a href="Add%20audio%20to%20cards.html">add the field</a> to a card.</p>
-<p>Here, too, more sophisticated uses are described on an
-<a href="More%20audio%20cards.html">extra page</a>.</p>
+note, and how to <a href="More%20audio%20cards.html">create audio cards</a>.</p>
 <h2>Downloading</h2>
 <figure>
 <img src="images/manual_audio.png" alt="The sub-menu Edit/Media is
@@ -199,14 +197,18 @@ download.</p>
 dictionaries used.</p>
 <p>At the moment, you can get pronunciations for</p>
 <ul>
-<li>English (<code>en</code>) from <a href="http://beolingus.org">BeoLingus</a>,
+<li>English (<code>en</code>) from
   <a href="http://www.macmillandictionary.com/dictionary/">Macmillan Dictionary</a>,
-  <a href="http://merriam-webster.com">Merriam-Webster</a> and
-  <a href="http://oaadonline.oxfordlearnersdictionaries.com/">Oxford Advanced American Dictionary</a>.</li>
+  <a href="http://merriam-webster.com">Merriam-Webster</a>,
+  <a href="http://oaadonline.oxfordlearnersdictionaries.com/">Oxford Advanced American Dictionary</a> &amp;c.</li>
+<li>French (<code>fr</code>) from <a href="http://www.collinsdictionary.com/dictionary/english-french">Collins</a></li>
 <li>German (<code>de</code>) from <a href="http://beolingus.org">BeoLingus</a> and
   <a href="http://www.duden.de">Duden</a></li>
+<li>Italian (<code>it</code>) from
+  <a href="http://www.collinsdictionary.com/dictionary/english-italian">Collins</a></li>
 <li>Japanese (<code>ja</code>) from <a href="http://japanesepod101.com">JapanesePod</a></li>
 <li>Spanish (<code>es</code>) from <a href="http://beolingus.org">BeoLingus</a></li>
+<li>Swedish (<code>sv</code>) from <a href="http://lexin.nada.kth.se/lexin/">Lexin</a></li>
 </ul>
 <p>Google translate list over 60 languages for text translations. It
 seems unlikely that they offer text-to-speech services for more. The
@@ -218,13 +220,16 @@ code. The add-on may or may not find anything useful.</p>
 <h2>Private use</h2>
 <p>These audio files can be freely downloaded without registering or
 agreeing to a license, but they keep the copyright of those providing
-them. While i see no problem with using them privately, especially for
-educational purposes, re-publishing, for example by uploading a shared
-deck to AnkiWeb, is most likely prohibited by those rights.</p>
-<p>An exception is Wiktionary. Those files are usually available under
-the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution/Share-Alike
-License</a>. See the
-<a href="http://wikimediafoundation.org/wiki/Terms_of_use">Wikimedia Terms of Use</a>.</p>
+them. While i see no problem with using them privately, re-publishing,
+for example by uploading a shared deck to AnkiWeb, is most likely
+prohibited by those rights.</p>
+<p>Even words downloaded from Wiktionary should not simply be
+re-published. Those files <em>are</em> usually available under the
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution/Share-Alike License</a>,
+but the add-on does not correctly attribute the files to their
+authors. See the
+<a href="http://wikimediafoundation.org/wiki/Terms_of_use">Wikimedia Terms of Use</a>
+for details.</p>
 <blockquote class="nb">
 Do not publish decks with audio clips downloaded with this add-on
 without ensuring you have the rights to do so.
@@ -250,7 +255,7 @@ every card. There are a few reasons for this:</p>
 <p>Bugs and other issues can be reported at the
 <a href="https://github.com/ospalh/anki-addons/issues?state=open">GitHub repository</a>
 or the add-ons
-<a href="https://groups.google.com/d/topic/anki-addons/DMgTHkhnhow/discussion">Google Groups thread</a>.</p>
+<a href="https://anki.tenderapp.com/discussions/add-ons">issue tracker</a>.</p>
 <p>Github pull requests with patches are welcome. The preferred way is to use
 git-flow and create a <code>feature</code> branch off the
 <a href="https://github.com/ospalh/anki-addons/tree/develop"><code>develop</code></a>
@@ -279,13 +284,12 @@ directory.</p>
   complete the word in the “Manual audio” dialog, the add-on could
   automatically add the 「る」 for 一段動詞.  This will most likely
   not by implemented any time soon.</li>
-<li>More talking dictionaries. Links welcome. Mention them in the
-  <a href="https://groups.google.com/d/topic/anki-addons/DMgTHkhnhow/discussion">Google Groups thread</a>.
-  Python files welcome. Take a look at
+<li>More non-English talking dictionaries. Links welcome.  Python files
+  welcome. Take a look at
   <a href="https://github.com/ospalh/anki-addons/tree/develop/downloadaudio/downloaders"><code>downloadaudio/downloaders</code></a>,
   write a new class derived from <code>AudioDownloader</code> and send me a pull
-  request. Or just the <code>.py</code>-file. There are already quite a number
-  of sources for English, so i will probably not add any more for that
+  request. Or just the <code>.py</code>-file. There are already quite a number of
+  sources for English, so i will probably not add any more for that
   language.</li>
 </ul>
     
