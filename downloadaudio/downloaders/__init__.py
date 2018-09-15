@@ -34,6 +34,7 @@ from .macmillan_british import MacmillanBritishDownloader
 from .mw import MerriamWebsterDownloader
 from .oald import OaldDownloader
 from .wiktionary import WiktionaryDownloader
+from .forvo import ForvoDownloader
 
 
 downloaders = [
@@ -54,6 +55,7 @@ downloaders = [
     CollinsItalianDownloader(),
     CollinsSpanishDownloader(),
     BeolingusDownloader(),
+    ForvoDownloader(),
 ]
 # For each word field, these downloader sites are tried in the order
 # they appear here. Lines starting with a “#” are not tried. Change
